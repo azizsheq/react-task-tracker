@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
+import Footer from './components/Footer'
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(true)
@@ -52,8 +53,10 @@ const toggleReminder = (id) => {
       <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}></Header>
       {showAddTask && <AddTask onAdd={addTask}></AddTask>}
       {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder}></Tasks>) : ('No Tasks To Show')}
+      <Footer/>
     </div>
   );
 }
 
 export default App;
+// ref & credit : https://www.youtube.com/watch?v=w7ejDZ8SWv8
